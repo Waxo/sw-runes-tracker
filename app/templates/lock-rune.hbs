@@ -1,6 +1,7 @@
+{{paper-input class="flex-30" placeholder="Filter" value=filter onChange=(action (mut filter))}}
 <div class="layout-row layout-wrap">
   {{#each @model as |monster|}}
-  <div class="flex-25">
+  <div class="flex-25" style={{name-contains monster.name filter}}>
     <PaperCheckbox
       @value={{monster.checked}}
       @onChange={{action (mut monster.checked)}}>
