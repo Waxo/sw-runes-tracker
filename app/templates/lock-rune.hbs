@@ -1,0 +1,15 @@
+<div class="layout-row layout-wrap">
+  {{#each @model as |monster|}}
+  <div class="flex-25">
+    <PaperCheckbox
+      @value={{monster.checked}}
+      @onChange={{action (mut monster.checked)}}>
+      {{monster.name}}
+    </PaperCheckbox>
+  </div>
+  {{/each}}
+</div>
+
+<LockRunesComp @monsters={{@model}} />
+
+{{outlet}}

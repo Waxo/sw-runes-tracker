@@ -7,4 +7,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
+  this.route('import');
+  this.route('lock-rune');
+  this.route('view-rune');
 });

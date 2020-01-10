@@ -1,0 +1,9 @@
+<PaperCard>
+<FileDropzone @name="swrt-save"
+              @ondrop={{action "swrt"}}
+              as |dropzone queue|>
+  <h4>Upload SW Runes tracker old save {{#if this.isLoaded}}{{paper-icon "done"}}{{/if}}</h4>
+  or ignore this step
+</FileDropzone>
+</PaperCard>
+{{yield}}

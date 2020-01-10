@@ -1,0 +1,8 @@
+<PaperCard>
+<FileDropzone @name="swex-json"
+              @ondrop={{action "swex"}}
+              as |dropzone queue|>
+  <h4>Upload SWEX JSON {{#if this.isLoaded}}{{paper-icon "done"}}{{/if}}</h4>
+</FileDropzone>
+</PaperCard>
+{{yield}}

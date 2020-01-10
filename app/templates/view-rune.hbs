@@ -1,0 +1,32 @@
+<PaperDataTable sortProp="currentLocation" sortDir="desc" selectable=true as |table|>
+  {{#table.head as |head|}}
+    {{#head.column}}Rune ID{{/head.column}}
+    {{#head.column sortProp="currentLocation"}}Current Location{{/head.column}}
+    {{#head.column}}Old Locations{{/head.column}}
+    {{#head.column sortProp="firstSeen"}}First Seen{{/head.column}}
+    {{#head.column sortProp="lastUsage"}}Last Usage{{/head.column}}
+    {{#head.column}}Stars{{/head.column}}
+    {{#head.column sortProp="set_id"}}Set{{/head.column}}
+    {{#head.column sortProp="pri_eff"}}Main{{/head.column}}
+    {{#head.column sortProp="prefix_eff"}}Inate{{/head.column}}
+    {{#head.column}}Subs{{/head.column}}
+  {{/table.head}}
+  {{#table.body as |body|}}
+    {{#each (sort-by table.sortDesc @model) as |rune|}}
+      {{#body.row as |row|}}
+        {{#row.cell}}{{rune.rune_id}}{{/row.cell}}
+        {{#row.cell}}{{rune.currentLocation}}{{/row.cell}}
+        {{#row.cell}}{{rune.oldLocations}}{{/row.cell}}
+        {{#row.cell}}{{moment-format rune.firstSeen 'YYYY/MM/DD'}}{{/row.cell}}
+        {{#row.cell}}{{moment rune.lastUsage 'YYYY/MM/DD'}}{{/row.cell}}
+        {{#row.cell}}{{rune.star}}{{/row.cell}}
+        {{#row.cell}}{{rune.set_id}}{{/row.cell}}
+        {{#row.cell}}{{rune.pri_eff}}{{/row.cell}}
+        {{#row.cell}}{{rune.prefix_eff}}{{/row.cell}}
+        {{#row.cell}}{{rune.subs}}{{/row.cell}}
+      {{/body.row}}
+    {{/each}}
+  {{/table.body}}
+</PaperDataTable>
+
+{{outlet}}
