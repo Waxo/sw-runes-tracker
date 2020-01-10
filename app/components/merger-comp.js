@@ -21,16 +21,18 @@ export default class MergerComp extends Component {
 
   @action
   async export() {
-    fs.writeJSON(
-      `${this.swrtStore.getPath()}\\swrt-export-${moment().format(
-        'YYYY-MM-DD'
-      )}.json`,
-      this.swrtStore.getDB()
-    );
+    const path = `${this.swrtStore.getPath()}\\swrt-export-${moment().format(
+      'YYYY-MM-DD'
+    )}.json`;
+    fs.writeJSON(path, this.swrtStore.getDB());
+    this.paperToaster.show(`Exported to JSON (${path})`);
   }
 
   @action
   async exportCSV() {
+    const path = `${this.swrtStore.getPath()}\\swrt-export-${moment().format(
+      'YYYY-MM-DD'
+    )}.csv`;
     const idx = [
       'rune_id',
       'firstSeen',
@@ -54,11 +56,7 @@ export default class MergerComp extends Component {
       'RES',
       'ACC'
     ].join(',');
-    fs.writeFile(
-      `${this.swrtStore.getPath()}\\swrt-export-${moment().format(
-        'YYYY-MM-DD'
-      )}.csv`,
-      R.join('\n', [idx, csvMaker(this.swrtStore.getDB())])
-    );
+    fs.writeFile(path, R.join('\n', [idx, csvMaker(this.swrtStore.getDB())]));
+    this.paperToaster.show(`Exported to CSV (${path})`);
   }
 }

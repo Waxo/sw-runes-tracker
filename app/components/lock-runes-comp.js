@@ -18,7 +18,6 @@ export default class MergerComp extends Component {
     )(this.monsters);
 
     this.swrtStore.lockRunes(monstersToLock);
-    this.paperToaster('Runes Updated');
+    this.paperToaster.show('Runes Updated');
   }
 }
-

@@ -15,7 +15,8 @@
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember electron",
-    "test": "ember test"
+    "test": "ember test",
+    "make-exe": "ember electron:make --platform=win32"
   },
   "devDependencies": {
     "@ember/optional-features": "^1.1.0",

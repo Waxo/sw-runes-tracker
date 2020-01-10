@@ -18,7 +18,7 @@
         {{#row.cell}}{{rune.currentLocation}}{{/row.cell}}
         {{#row.cell}}{{rune.oldLocations}}{{/row.cell}}
         {{#row.cell}}{{moment-format rune.firstSeen 'YYYY/MM/DD'}}{{/row.cell}}
-        {{#row.cell}}{{moment rune.lastUsage 'YYYY/MM/DD'}}{{/row.cell}}
+        {{#row.cell}}{{moment-format rune.lastUsage 'YYYY/MM/DD'}}{{/row.cell}}
         {{#row.cell}}{{rune.star}}{{/row.cell}}
         {{#row.cell}}{{rune.set_id}}{{/row.cell}}
         {{#row.cell}}{{rune.pri_eff}}{{/row.cell}}
