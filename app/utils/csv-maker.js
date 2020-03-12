@@ -6,7 +6,7 @@ const updater_ = ([idx, value], init) => R.update(idx - 1, value, init);
 
 const secondaries_ = (subs, init) => {
   if (R.isNil(init)) {
-    init = R.repeat('-', 11);
+    init = R.repeat('-', 12);
   }
   return R.length(subs) === 0
     ? R.join(',', init)
